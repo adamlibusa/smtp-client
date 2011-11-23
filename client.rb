@@ -16,10 +16,10 @@ module SmtpClient
   end
 
   def receive_line(data)
-    pust data
+    puts data
   end
 end
 
 EventMachine.run do
-  EventMachine.start("127.0.0.1", 3000, SmtpClient)
+  EventMachine.start_server("127.0.0.1", 3000, SmtpClient)
 end
