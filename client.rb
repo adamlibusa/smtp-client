@@ -21,5 +21,5 @@ module SmtpClient
 end
 
 EventMachine.run do
-  EventMachine.start_server("127.0.0.1", 3000, SmtpClient)
+  EventMachine.connect("127.0.0.1", 3000, SmtpClient)
 end
